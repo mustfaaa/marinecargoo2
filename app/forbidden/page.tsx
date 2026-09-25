@@ -1,0 +1,1 @@
+export default function ForbiddenPage() { return <main className="flex min-h-screen items-center justify-center bg-[#f5f8f7] p-6 text-center"><div><h1 className="text-2xl font-semibold text-[#193332]">Access restricted</h1><p className="mt-2 text-sm text-[#78908d]">Your account does not have EELELL platform administrator access.</p></div></main> }

@@ -1,47 +1,22 @@
-export default function Page() {
-  return (
-    <main
-      style={{
-        colorScheme: 'light dark',
-        position: 'relative',
-        display: 'flex',
-        minHeight: '100vh',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'light-dark(#fff, #000)',
-        color: 'light-dark(#000, #fff)',
-      }}
-    >
-      <svg
-        aria-hidden="true"
-        style={{ width: 80, height: 80 }}
-        width={80}
-        height={80}
-        fill="none"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        stroke="currentColor"
-        strokeWidth="0.5"
-      >
-        <path
-          d="M14.2 14.2H17V6.9375C17 4.76288 15.2371 3 13.0625 3H5.8V5.8M14.2 14.2V7.79063L7.79062 14.2H14.2ZM14.2 14.2V17H6.9375C4.76288 17 3 15.2371 3 13.0625V5.8H5.8M5.8 5.8V12.2313L12.2313 5.8H5.8Z"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <p
-        style={{
-          position: 'absolute',
-          left: '50%',
-          top: 'calc(50% + 56px)',
-          transform: 'translateX(-50%)',
-          whiteSpace: 'nowrap',
-          fontSize: '14px',
-          fontWeight: 500,
-          color: 'light-dark(#71717a, #a1a1aa)',
-        }}
-      >
-        Your v0 generation will show here.
-      </p>
-    </main>
-  )
+'use client'
+
+import { ArrowRight, Check, Code2, Layers3, ShieldCheck, Users, Workflow } from 'lucide-react'
+import Link from 'next/link'
+
+const modules = [
+  { icon: Layers3, title: 'Product studio', text: 'Build, price, version, and publish insurance products without rebuilding your core systems.' },
+  { icon: Code2, title: 'API and embedded channels', text: 'Give banks, logistics companies, and third-party apps secure quote and certificate experiences.' },
+  { icon: Users, title: 'Customer workspaces', text: 'Onboard distribution partners, manage access, and understand who is driving your book.' },
+  { icon: Workflow, title: 'Growth operations', text: 'Turn premium, conversion, renewal, and channel analytics into your next commercial move.' },
+]
+
+export default function HomePage() {
+  return <main className="min-h-screen overflow-hidden bg-[#f6faf8] text-[#173b39]">
+    <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10"><Link href="/" className="flex items-center gap-3"><span className="flex size-10 items-center justify-center rounded-xl bg-[#0e6d69] text-white"><ShieldCheck size={20}/></span><span><span className="block text-lg font-bold tracking-[-.05em]">EELELL</span><span className="block text-[9px] font-bold uppercase tracking-[.2em] text-[#79928f]">Insurance infrastructure</span></span></Link><div className="hidden items-center gap-8 text-sm text-[#5f7773] md:flex"><a href="#platform">Platform</a><a href="#how-it-works">How it works</a><a href="#insurers">For insurers</a></div><Link href="/sign-in" className="rounded-lg border border-[#cfe1dd] bg-white px-4 py-2.5 text-xs font-semibold text-[#0e6d69]">Sign in</Link></nav>
+    <section className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-12 lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:px-10 lg:pb-28 lg:pt-20"><div><p className="mb-5 flex items-center gap-2 text-xs font-bold uppercase tracking-[.18em] text-[#0e6d69]"><span className="size-2 rounded-full bg-[#45ad85]"/> The modular insurance network</p><h1 className="max-w-3xl text-5xl font-semibold leading-[.98] tracking-[-.07em] sm:text-7xl">Build insurance products that move with your market.</h1><p className="mt-7 max-w-xl text-base leading-7 text-[#66817c]">EELELL gives insurers the tools to launch products, onboard banks and partner apps, and distribute cover through APIs and embedded experiences.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><Link href="/sign-in?role=insurer" className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0e6d69] px-5 py-3 text-sm font-semibold text-white">Start an insurer workspace <ArrowRight size={16}/></Link><a href="#platform" className="inline-flex items-center justify-center rounded-lg border border-[#cfe1dd] bg-white px-5 py-3 text-sm font-semibold text-[#0e6d69]">Explore the platform</a></div><div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-xs text-[#79928f]">{['Product control','Partner distribution','Actionable analytics'].map(item=><span key={item} className="flex items-center gap-2"><Check size={14} className="text-[#3c9c81]"/>{item}</span>)}</div></div><div className="relative"><div className="absolute -inset-8 rounded-[3rem] bg-[#dff1eb] blur-3xl"/><div className="relative rounded-[2rem] border border-[#cfe4df] bg-white p-4 shadow-[0_24px_80px_rgba(31,84,75,.12)]"><div className="rounded-[1.4rem] bg-[#173b39] p-6 text-white sm:p-8"><div className="flex items-center justify-between"><div><p className="text-[10px] font-bold uppercase tracking-[.18em] text-[#8fe0c5]">Insurer workspace</p><p className="mt-2 text-xl font-semibold">Al Waha Insurance</p></div><span className="rounded-full bg-[#285b55] px-3 py-1 text-[10px] text-[#bde8da]">Live</span></div><div className="mt-8 grid grid-cols-2 gap-3"><div className="rounded-xl bg-white/10 p-4"><p className="text-[10px] text-[#9cc3bb]">Gross premium</p><p className="mt-2 text-2xl font-semibold">LYD 1.42m</p><p className="mt-1 text-[10px] text-[#8fe0c5]">+18.4% this month</p></div><div className="rounded-xl bg-white/10 p-4"><p className="text-[10px] text-[#9cc3bb]">Partner channels</p><p className="mt-2 text-2xl font-semibold">8</p><p className="mt-1 text-[10px] text-[#8fe0c5]">3 ready to activate</p></div></div><div className="mt-4 rounded-xl bg-white/10 p-4"><div className="flex items-center justify-between text-[10px] text-[#9cc3bb]"><span>Premium performance</span><span>Last 12 months</span></div><div className="mt-5 flex h-24 items-end gap-2">{[28,38,34,48,42,56,50,68,58,76,70,86].map((height,index)=><div key={index} className="flex-1 rounded-t bg-[#8fe0c5]" style={{height:`${height}px`}}/>)}</div></div></div></div></div></section>
+    <section id="platform" className="border-y border-[#deece8] bg-white"><div className="mx-auto max-w-7xl px-6 py-20 lg:px-10"><div className="max-w-2xl"><p className="text-xs font-bold uppercase tracking-[.18em] text-[#0e6d69]">One operating system</p><h2 className="mt-3 text-3xl font-semibold tracking-[-.06em] sm:text-5xl">From product idea to partner distribution.</h2><p className="mt-5 text-sm leading-6 text-[#66817c]">Your team owns the product, the customer relationship, and the growth loop. EELELL connects the pieces into one manageable workspace.</p></div><div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">{modules.map(({icon:Icon,title,text})=><article key={title} className="rounded-2xl border border-[#dfe9e7] bg-[#fbfcfb] p-5"><div className="flex size-10 items-center justify-center rounded-xl bg-[#e3f2ef] text-[#0e6d69]"><Icon size={18}/></div><h3 className="mt-7 text-sm font-semibold">{title}</h3><p className="mt-3 text-xs leading-5 text-[#78908d]">{text}</p></article>)}</div></div></section>
+    <section id="how-it-works" className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:px-10"><div><p className="text-xs font-bold uppercase tracking-[.18em] text-[#0e6d69]">How it works</p><h2 className="mt-3 text-3xl font-semibold tracking-[-.06em] sm:text-5xl">A clear path to your next channel.</h2></div><div className="grid gap-4">{[['01','Create your workspace','Set up your insurer identity, teams, products, and operating rules.'],['02','Connect your customers','Invite banks, logistics operators, and third-party apps into controlled partner channels.'],['03','Launch and learn','Publish API and embedded solutions, then use analytics to improve conversion and retention.']].map(([number,title,text])=><div key={number} className="flex gap-5 border-b border-[#dfe9e7] pb-5"><span className="text-xs font-bold text-[#8ab9ad]">{number}</span><div><h3 className="text-sm font-semibold">{title}</h3><p className="mt-2 text-xs leading-5 text-[#78908d]">{text}</p></div></div>)}</div></section>
+    <section id="insurers" className="mx-6 mb-10 rounded-[2rem] bg-[#dff1eb] px-6 py-12 sm:px-12 lg:mx-auto lg:max-w-7xl"><div className="flex flex-col justify-between gap-8 md:flex-row md:items-end"><div><p className="text-xs font-bold uppercase tracking-[.18em] text-[#0e6d69]">Built for insurers</p><h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-[-.06em] sm:text-4xl">Own the relationship. Grow the book.</h2><p className="mt-4 max-w-lg text-sm leading-6 text-[#5e7774]">Sign in to a dedicated workspace for your business, separate from EELELL platform administration.</p></div><Link href="/sign-in?role=insurer" className="inline-flex items-center gap-2 rounded-lg bg-[#0e6d69] px-5 py-3 text-sm font-semibold text-white">Create insurer account <ArrowRight size={16}/></Link></div></section>
+    <footer className="mx-auto flex max-w-7xl flex-col gap-3 px-6 pb-8 text-xs text-[#79928f] sm:flex-row sm:items-center sm:justify-between lg:px-10"><span>EELELL · Insurance infrastructure for modern distribution</span><div className="flex gap-5"><Link href="/sign-in?role=admin">Platform admin sign in</Link><Link href="/sign-in?role=insurer">Insurer sign in</Link></div></footer>
+  </main>
 }

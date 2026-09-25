@@ -1,8 +1,15 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
+@import './tokens.css';
+@import './tokens.dark.css';
 
-@custom-variant dark (&:is(.dark *));
+@media print {
+  body * { visibility: hidden !important; }
+  .print-policy, .print-policy * { visibility: visible !important; }
+  .print-policy { position: absolute !important; inset: 0 !important; width: 100% !important; margin: 0 !important; border: 0 !important; box-shadow: none !important; }
+  .print-policy button, .print-policy + * { display: none !important; }
+}
 
 @theme inline {
   --color-sidebar-ring: var(--sidebar-ring);
@@ -159,5 +166,54 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: Arial, Helvetica, sans-serif;
   }
+  button {
+    cursor: pointer;
+  }
+}
+
+/* Final token cascade for every platform surface. */
+:root {
+  color-scheme: light;
+  --background: var(--bg-page);
+  --foreground: var(--text-primary);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-elevated);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--color-primary-600);
+  --primary-foreground: var(--text-on-dark);
+  --secondary: var(--color-secondary-50);
+  --secondary-foreground: var(--color-secondary-700);
+  --muted: var(--color-neutral-100);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--color-primary-50);
+  --accent-foreground: var(--color-primary-700);
+  --destructive: var(--color-failure);
+  --border: var(--color-neutral-200);
+  --input: var(--color-neutral-200);
+  --ring: var(--ring-focus);
+}
+
+[data-theme='dark'], .dark {
+  color-scheme: dark;
+  --background: var(--bg-page);
+  --foreground: var(--text-primary);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-elevated);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--color-primary);
+  --primary-foreground: var(--color-primary-900);
+  --secondary: var(--color-secondary);
+  --secondary-foreground: var(--text-on-dark);
+  --muted: var(--color-neutral-800);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--color-primary-800);
+  --accent-foreground: var(--text-on-dark);
+  --destructive: var(--color-failure);
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: var(--ring-focus);
 }
