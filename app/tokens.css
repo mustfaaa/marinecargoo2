@@ -5,8 +5,8 @@
 :root {
   /* --- Core palette --- */
   --color-primary-light: #C6C6C6;  /* page backgrounds, card fills, hover states */
-  --color-primary: #d92d20;  /* CTAs, active states, links, brand accent */
-  --color-primary-dark: #b42318;  /* headers, footers, dark sections, hover on primary */
+  --color-primary: #57D8FF;  /* CTAs, active states, links, brand accent */
+  --color-primary-dark: #BFF2FF;  /* headers, footers, dark sections, hover on primary */
   --color-secondary-light: #F6F2E5;
   --color-secondary: #00392F;
   --color-secondary-dark: #252525;
@@ -32,14 +32,14 @@
   --color-failure-oklch: oklch(0.67 0.194 25);
 
   /* --- Primary shade scale (50–950) --- */
-  --color-primary-50: #fff1f0;
+  --color-primary-50: #EBFAFF;
   --color-primary-100: #ABE9FF;
   --color-primary-200: #57D8FF;
   --color-primary-300: #41B7DA;
   --color-primary-400: #2C98B6;
   --color-primary-500: #147994;
-  --color-primary-600: #b42318;
-  --color-primary-700: #912018;
+  --color-primary-600: #005B71;
+  --color-primary-700: #003F4F;
   --color-primary-800: #00252F;
   --color-primary-900: #000D13;
   --color-primary-950: #000101;
